@@ -1,4 +1,4 @@
-#Fayol
+# Fayol
 
 ## A small integrated management system (in development)
 
