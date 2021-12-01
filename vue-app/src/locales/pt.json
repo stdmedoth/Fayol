@@ -1,0 +1,25 @@
+{
+  "Products": "Produtos",
+  "Information": "Informação",
+  "Product Name": "Nome do Produto",
+  "Weight": "Peso",
+  "Supplier" :"Fornecedor",
+  "Retail quantity": "Preço Varejo",
+  "Unitary Quantity": "Preço Unitário",
+  "Simple Price": "Preço Simples",
+  "Group": "Grupo",
+  "Observation": "Observação",
+  "Conclude": "Concluir",
+  "Change" : "Alterar",
+  "Cancel": "Cancelar",
+  "Exclude": "Excluir",
+  "Dashboard": "Dashboard",
+  "Registers": "Cadastros",
+  "Products": "Produtos",
+  "People": "Pessoa",
+  "Financial": "Financeiro",
+  "Inventory": "Estoque",
+  "Inflows": "Entradas",
+  "Outflows": "Saídas"
+
+}

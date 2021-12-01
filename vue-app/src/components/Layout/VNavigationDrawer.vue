@@ -1,15 +1,11 @@
 <template>
-  <v-navigation-drawer app dark permanent>
-    <v-list-item>
-      <v-list-item-content>
-        <v-list-item-title class="text-h6">
-          Fayol
-        </v-list-item-title>
-        <v-list-item-subtitle>
-          Your simple IMS
-        </v-list-item-subtitle>
-      </v-list-item-content>
-    </v-list-item>
+  <v-navigation-drawer
+    app
+    dark
+    permanent
+    :mini-variant="mini"
+    clipped
+  >
 
     <v-divider></v-divider>
 
@@ -33,7 +29,7 @@
               </v-list-item-icon>
 
               <v-list-item-content>
-                <v-list-item-title>{{ item.title }}</v-list-item-title>
+                <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
               </v-list-item-content>
             </v-list-item>
           </router-link>
@@ -43,7 +39,7 @@
             :prepend-icon="item.icon"
           >
             <template v-slot:activator>
-              <v-list-item-title>{{item.title}}</v-list-item-title>
+              <v-list-item-title>{{ $t(item.title) }}</v-list-item-title>
             </template>
             <router-link
               style="text-decoration: none"
@@ -54,7 +50,7 @@
             >
               <v-list-item >
                 <v-list-item-content class="ml-10">
-                  <v-list-item-title right>{{ children.title }}</v-list-item-title>
+                  <v-list-item-title right>{{ $t(children.title) }}</v-list-item-title>
                 </v-list-item-content>
                 <v-list-item-icon>
                   <v-icon>{{ children.icon }}</v-icon>
@@ -70,19 +66,25 @@
 
 <script>
   export default {
+    mounted(){
+      this.$root.$on('navigation_drawer:change_mini', ()=>{
+        this.mini = !this.mini;
+      })
+    },
     data () {
       return {
+        mini: true,
         items: [
-          { title: 'Dashboard', icon: 'mdi-view-dashboard', location: 'dashboard' },
-          { title: 'Cadastros', icon: 'mdi-plus-circle-outline', childrens: [
-            { title: 'Produtos', icon: 'mdi-archive-plus-outline', location: '/registers/products' },
-            { title: 'Pessoas', icon: 'mdi-account-group', location: '/registers/people' },
+          { title: 'Dashboard', icon: 'mdi-view-dashboard', location: '/dashboard' },
+          { title: 'Registers', icon: 'mdi-plus-circle-outline', childrens: [
+            { title: 'Products', icon: 'mdi-archive-plus-outline', location: '/registers/products' },
+            { title: 'People', icon: 'mdi-account-group', location: '/registers/people' },
           ] },
-          { title: 'Financeiro', icon: 'mdi-wallet', childrens: [
+          { title: 'Financial', icon: 'mdi-wallet', childrens: [
             { title: 'Entradas', icon: 'mdi-cash-plus', location: '/financial/inflows' },
             { title: 'Saídas', icon: 'mdi-cash-minus', location: '/financial/outflows' },
           ]},
-          { title: 'Estoque', icon: 'mdi-package-variant', childrens: [
+          { title: 'Inventory', icon: 'mdi-package-variant', childrens: [
             { title: 'Entradas', icon: 'mdi-store-plus', location: '/inventory/inflows' },
             { title: 'Saídas', icon: 'mdi-store-minus', location: '/inventory/outflows' },
           ] },

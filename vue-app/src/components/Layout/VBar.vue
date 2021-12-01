@@ -1,12 +1,14 @@
 <template>
   <div>
     <v-app-bar
+      app
       dense
+      clipped-left
       dark
     >
-      <v-app-bar-nav-icon></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon @click="$root.$emit('navigation_drawer:change_mini')"></v-app-bar-nav-icon>
 
-      <v-toolbar-title>Page title</v-toolbar-title>
+      <v-toolbar-title>{{AppName}}</v-toolbar-title>
 
       <v-spacer></v-spacer>
 
@@ -43,7 +45,7 @@
   export default{
     data(){
       return {
-
+        AppName: 'Fayol'
       }
     }
   }
