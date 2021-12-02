@@ -5,6 +5,7 @@
     permanent
     :mini-variant="mini"
     clipped
+    :expand-on-hover="hover"
   >
 
     <v-divider></v-divider>
@@ -49,12 +50,12 @@
               custom
             >
               <v-list-item >
-                <v-list-item-content class="ml-10">
+                <v-list-item-icon :class="!mini && !hover ? 'ml-10' : 'ml-00'">
+                  <v-icon color="blue">{{ children.icon }}</v-icon>
+                </v-list-item-icon>
+                <v-list-item-content>
                   <v-list-item-title right>{{ $t(children.title) }}</v-list-item-title>
                 </v-list-item-content>
-                <v-list-item-icon>
-                  <v-icon>{{ children.icon }}</v-icon>
-                </v-list-item-icon>
               </v-list-item>
             </router-link>
           </v-list-group>
@@ -74,10 +75,11 @@
     data () {
       return {
         mini: true,
+        hover: false,
         items: [
           { title: 'Dashboard', icon: 'mdi-view-dashboard', location: '/dashboard' },
           { title: 'Registers', icon: 'mdi-plus-circle-outline', childrens: [
-            { title: 'Products', icon: 'mdi-archive-plus-outline', location: '/registers/products' },
+            { title: 'Products', icon: 'mdi-package-variant-closed', location: '/registers/products' },
             { title: 'People', icon: 'mdi-account-group', location: '/registers/people' },
           ] },
           { title: 'Financial', icon: 'mdi-wallet', childrens: [

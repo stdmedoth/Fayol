@@ -1,25 +1,33 @@
 <template id="">
   <v-container>
-    <v-row>
+    <v-row class="mt-5">
       <v-col
         cols="12"
         md="6"
       >
-        <v-text-field
+        <vuetify-money
           :label="$t('Unitary Quantity')"
           :rules="rules"
+          type="number"
           hide-details="auto"
-        ></v-text-field>
+          :outlined="true"
+          :clearable="true"
+          :options="currencyOptions"
+        ></vuetify-money>
       </v-col>
       <v-col
         cols="12"
         md="6"
       >
-        <v-text-field
+        <vuetify-money
           :label="$t('Retail quantity')"
           :rules="rules"
+          type="number"
           hide-details="auto"
-        ></v-text-field>
+          :outlined="true"
+          :clearable="true"
+          :options="currencyOptions"
+        ></vuetify-money>
       </v-col>
     </v-row>
     <v-row>
@@ -30,6 +38,9 @@
         <v-text-field
           :label="$t('Group')"
           :rules="rules"
+          type="text"
+          :outlined="true"
+          :clearable="true"
           hide-details="auto"
         ></v-text-field>
       </v-col>
@@ -37,11 +48,15 @@
         cols="12"
         md="6"
       >
-        <v-text-field
-          :label="$t('Simple Price')"
+        <vuetify-money
+          :label="$t('Main Price')"
           :rules="rules"
+          type="number"
           hide-details="auto"
-        ></v-text-field>
+          :outlined="true"
+          :clearable="true"
+          :options="currencyOptions"
+        ></vuetify-money>
       </v-col>
     </v-row>
   </v-container>
@@ -55,7 +70,14 @@ export default {
   data(){
     return {
       tab: null,
-      rules: []
+      rules: [],
+      currencyOptions: {
+        locale: "pt-BR",
+        prefix: "R$",
+        suffix: "",
+        length: 11,
+        precision: 2
+      },
     }
   },
   components: {

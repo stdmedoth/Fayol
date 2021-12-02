@@ -5,13 +5,13 @@
       height="500"
       elevation="24"
     >
-      <v-card-text height="200" style="overflow: auto;">
+      <v-card-text >
         <v-form>
           <v-toolbar
             dark
             flat
           >
-            <v-card-title>{{$t('People')}}</v-card-title>
+            <v-card-title>{{$t('Products')}}</v-card-title>
             <template v-slot:extension>
               <v-tabs
                 v-model="tab"
@@ -57,11 +57,9 @@
 </template>
 
 <script>
-import Basic from  '@/views/Registers/People/Main';
-import Contacts from  '@/views/Registers/People/Contacts';
-import Address from  '@/views/Registers/People/Address';
-import Financial from  '@/views/Registers/People/Financial';
-import Others from  '@/views/Registers/People/Others';
+import Information from '@/views/Registers/Products/Information';
+import Revenues from '@/views/Registers/Products/Revenues';
+import Complement from '@/views/Registers/Products/Complement';
 
 export default {
   mounted(){
@@ -71,20 +69,16 @@ export default {
     return {
       tab: null,
       tablist: {
-        Basic,
-        Contacts,
-        Address,
-        Financial,
-        Others,
+        Information,
+        Revenues,
+        Complement
       }
     }
   },
   components: {
-    Basic,
-    Contacts,
-    Address,
-    Financial,
-    Others,
+    Information,
+    Revenues,
+    Complement
   }
 
 }

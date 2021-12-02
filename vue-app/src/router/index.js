@@ -2,7 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 import DashBoard from '@/views/DashBoard.vue';
 import PeopleRegisters from '@/views/Registers/People.vue';
-import ProductsRegisters from '@/views/Registers/Products/Products.vue';
+import ProductsRegisters from '@/views/Registers/Products.vue';
 
 Vue.use(VueRouter)
 

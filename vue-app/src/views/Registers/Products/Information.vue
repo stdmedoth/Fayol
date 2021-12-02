@@ -1,6 +1,6 @@
 <template id="">
   <v-container>
-    <v-row>
+    <v-row class="mt-5">
       <v-col
         cols="12"
         md="12"
@@ -8,6 +8,9 @@
         <v-text-field
           :label="$t('Product Name')"
           :rules="rules"
+          type="text"
+          :outlined="true"
+          :clearable="true"
           hide-details="auto"
         ></v-text-field>
       </v-col>
@@ -20,6 +23,9 @@
         <v-text-field
           :label="$t('Weight')"
           :rules="rules"
+          type="number"
+          :outlined="true"
+          :clearable="true"
           hide-details="auto"
         ></v-text-field>
       </v-col>
@@ -30,6 +36,9 @@
         <v-text-field
           :label="$t('Supplier')"
           :rules="rules"
+          type="text"
+          :outlined="true"
+          :clearable="true"
           hide-details="auto"
         ></v-text-field>
       </v-col>

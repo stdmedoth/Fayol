@@ -6,8 +6,13 @@ import store from './store'
 import i18n from './i18n'
 
 import vuetify from '@/plugins/vuetify';
+import "@/plugins/vuetify-money.js";
 
-Vue.config.productionTip = false
+import { VueMaskDirective } from 'v-mask'
+Vue.directive('mask', VueMaskDirective);
+
+
+Vue.config.productionTip = false;
 
 new Vue({
   router,
