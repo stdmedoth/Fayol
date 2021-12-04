@@ -4,7 +4,7 @@
 
 ### DashBoard
 
-![DashBoard](https://github.com/stdmedoth/Fayol/blob/main/vue-app/public/img/screenshots/dashboard.jpg?raw=true)
+![DashBoard](https://github.com/stdmedoth/Fayol/raw/main/vue-app/public/img/screenshots/dashboard.png)
 
 ### The project ll contain:
 
@@ -12,11 +12,11 @@
 
 ### Products
 
-![DashBoard](https://github.com/stdmedoth/Fayol/blob/main/vue-app/public/img/screenshots/products.jpg?raw=true)
+![Products](https://github.com/stdmedoth/Fayol/raw/main/vue-app/public/img/screenshots/products.png)
 
 ### People
 
-![DashBoard](https://github.com/stdmedoth/Fayol/blob/main/vue-app/public/img/screenshots/people.jpg?raw=true)
+![People](https://github.com/stdmedoth/Fayol/raw/main/vue-app/public/img/screenshots/people.png)
 
 > Sales Module ( quotes, purchase order )
 
