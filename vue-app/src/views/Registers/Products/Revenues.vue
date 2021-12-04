@@ -3,7 +3,7 @@
     <v-row class="mt-5">
       <v-col
         cols="12"
-        md="6"
+        sm="6"
       >
         <vuetify-money
           :label="$t('Unitary Quantity')"
@@ -17,7 +17,7 @@
       </v-col>
       <v-col
         cols="12"
-        md="6"
+        sm="6"
       >
         <vuetify-money
           :label="$t('Retail quantity')"
@@ -33,7 +33,7 @@
     <v-row>
       <v-col
         cols="12"
-        md="6"
+        sm="6"
       >
         <v-text-field
           :label="$t('Group')"
@@ -46,7 +46,7 @@
       </v-col>
       <v-col
         cols="12"
-        md="6"
+        sm="6"
       >
         <vuetify-money
           :label="$t('Main Price')"

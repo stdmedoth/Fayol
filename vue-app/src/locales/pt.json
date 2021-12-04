@@ -30,9 +30,15 @@
   "Document ID 2": "RG/IE",
   "date_format": "##/##/####",
   "Person Name 1": "Nome",
+  "Person Type": "Tipo de Pessoa",
+  "Extern Code": "Código Externo",
+  "Since": "Desde",
   "Person Name 2": "Nome Fantasia",
   "Contacts": "Contatos",
   "Others": "Outros",
-  "Extern Search People": "Consulta"
-
+  "Extern Search People": "Consulta",
+  "Minimum value for paid shipping": "Valor mínimo para frete pago",
+  "Payment Condition": "Condição de Pagamento",
+  "Paid Shipping": "Frete pago",
+  "Notifications": "Notificações"
 }

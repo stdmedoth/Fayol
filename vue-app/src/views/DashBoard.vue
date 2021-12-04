@@ -1,41 +1,40 @@
 <template>
   <div id="dashboard_page">
-    <v-parallax
-      height="200"
-      src="https://cdn.vuetifyjs.com/images/parallax/material2.jpg"
-    >
-      <v-row
-        align="center"
-        justify="center"
+    <v-row>
+      <v-col sm="12">
+        <Banner />
+      </v-col>
+    </v-row>
+    <v-row>
+      <v-col
+        sm="6"
       >
-        <v-col
-          class="text-center"
-          cols="12"
-        >
-          <h1 class="text-h4 font-weight-thin mb-4">
-            {{AppName}}
-          </h1>
-          <h4 class="subheading">
-            Your simple Integrated Management System (IMS)
-          </h4>
-        </v-col>
-      </v-row>
-    </v-parallax>
+        <Calendar />
+      </v-col>
+      <v-col
+        sm="6"
+      >
+        <Notes />
+      </v-col>
+    </v-row>
   </div>
 </template>
 
 <script>
-
-
+import Banner from '@/components/widgets/Banner';
+import Calendar from '@/components/widgets/Calendar';
+import Notes from '@/components/widgets/Notes';
 export default {
   name: 'DashBoard',
   data(){
     return {
-      AppName: 'Fayol'
+
     }
   },
   components: {
-
+    Calendar,
+    Banner,
+    Notes
   }
 }
 </script>

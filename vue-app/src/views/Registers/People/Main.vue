@@ -1,68 +1,95 @@
 <template id="">
   <v-container scrolled>
+    <v-row>
+      <v-col sm="2">
+        <v-btn>{{$t('Extern Search People')}}</v-btn>
+      </v-col>
+    </v-row>
     <v-row class="mt-5">
       <v-col
-        md="3"
+        sm="4"
       >
-        <v-select :items="documentTypes" v-model="doc_type" item-text="text" item-value="value">
+        <v-select
+          :items="documentTypes"
+          v-model="doc_type"
+          item-text="text"
+          item-value="value"
+          :outlined="true"
+          :clearable="true"
+          @change='doc_type_changed'
+        >
         </v-select>
       </v-col>
-      <v-col md="7">
+      <v-col sm="8">
         <v-text-field
           :label="$t('Document ID 1')"
           v-model="form_values.doc1_id"
           return-masked-value
           v-mask="doc1_mask"
+          :disabled="!doc_type"
+          :outlined="true"
+          :clearable="true"
         ></v-text-field>
-      </v-col>
-      <v-col md="2">
-        <v-btn>{{$t('Extern Search People')}}</v-btn>
       </v-col>
     </v-row>
     <v-row>
-      <v-col md="3">
+      <v-col sm="6">
         <v-text-field
           :label="$t('Document ID 2')"
           v-model="form_values.doc2_id"
           return-masked-value
           v-mask="doc2_mask"
+          :outlined="true"
+          :clearable="true"
         ></v-text-field>
       </v-col>
-      <v-col md="3">
+      <v-col sm="6">
         <v-select
           :label="$t('Person Type')"
           v-model="form_values.person_type"
           :items="personTypes"
+          :outlined="true"
+          :clearable="true"
         >
       </v-select>
       </v-col>
-      <v-col md="3">
+    </v-row>
+    <v-row>
+      <v-col sm="6">
         <v-text-field
           :label="$t('Extern Code')"
           v-model="form_values.extern_code"
+          :outlined="true"
+          :clearable="true"
         ></v-text-field>
       </v-col>
-      <v-col md="3">
+      <v-col sm="6">
         <v-text-field
           :label="$t('Since')"
           v-model="form_values.since"
           v-mask="$t('date_format')"
+          :outlined="true"
+          :clearable="true"
         ></v-text-field>
       </v-col>
     </v-row>
     <v-row>
-      <v-col md="12">
+      <v-col sm="12">
       <v-text-field
         :label="$t('Person Name 1')"
         v-model="form_values.name1"
+        :outlined="true"
+        :clearable="true"
       ></v-text-field>
       </v-col>
     </v-row>
     <v-row>
-      <v-col md="12">
+      <v-col sm="12">
       <v-text-field
         :label="$t('Person Name 2')"
         v-model="form_values.name2"
+        :outlined="true"
+        :clearable="true"
       ></v-text-field>
       </v-col>
     </v-row>
@@ -76,7 +103,7 @@ export default {
       get(){
         let doc =  this.documentTypes.find(e => e.value == this.doc_type);
         if(doc){
-          return doc.doc1_mask
+          return doc.doc1_mask;
         }
 
         return '';
@@ -95,8 +122,7 @@ export default {
     }
   },
   mounted(){
-    console.log(this.$i18n.messages.pt);
-    this.doc_type = this.documentTypes[0];
+
   },
   data(){
     return {
@@ -109,7 +135,7 @@ export default {
         extern_code: '',
         since: '',
       },
-      doc_type: '',
+      doc_type: false,
       documentTypes: [
         {text: 'Juridica', value: 1, doc1_mask: '##.###.###/####-##'},
         {text: 'Física', value: 2, doc1_mask: '###.###.###-##'},
@@ -124,7 +150,9 @@ export default {
   },
   methods: {
     doc_type_changed(){
-        console.log(this.doc_type)
+      if(this.doc_type == null){
+        this.form_values.doc1_id = '';
+      }
     }
   },
   components: {

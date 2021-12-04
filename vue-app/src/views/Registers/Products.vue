@@ -5,7 +5,7 @@
       height="500"
       elevation="24"
     >
-      <v-card-text >
+      <v-card-text style="height: 400px; overflow: auto;">
         <v-form>
           <v-toolbar
             dark
@@ -32,22 +32,30 @@
         </v-form>
       </v-card-text>
       <v-spacer></v-spacer>
-      <v-card-actions class="ml-10">
-        <v-btn outlined>
+      <v-card-actions>
+        <v-btn
+          outlined
+          :disabled="disable_action.conclude"
+        >
           {{$t('Conclude')}}
         </v-btn>
-        <v-btn outlined>
+        <v-btn
+          outlined
+          :disabled="disable_action.change"
+        >
           {{$t('Change')}}
         </v-btn>
         <v-btn
           outlined
           color="red"
+          :disabled="disable_action.cancel"
         >
-          {{$t('Cancel')}}
+        {{$t('Cancel')}}
         </v-btn>
         <v-btn
           outlined
           color="red"
+          :disabled="disable_action.exclude"
         >
           {{$t('Exclude')}}
         </v-btn>
@@ -67,6 +75,12 @@ export default {
   },
   data(){
     return {
+      disable_action:{
+        change: false,
+        conclude: true,
+        cancel: true,
+        exclude: true
+      },
       tab: null,
       tablist: {
         Information,

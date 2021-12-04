@@ -3,7 +3,7 @@
     <v-row class="mt-5">
       <v-col
         cols="12"
-        md="12"
+        sm="12"
       >
         <v-text-field
           :label="$t('Product Name')"
@@ -18,7 +18,7 @@
     <v-row>
       <v-col
         cols="12"
-        md="6"
+        sm="6"
       >
         <v-text-field
           :label="$t('Weight')"
@@ -31,7 +31,7 @@
       </v-col>
       <v-col
         cols="12"
-        md="6"
+        sm="6"
       >
         <v-text-field
           :label="$t('Supplier')"
