@@ -2,7 +2,7 @@
   <v-container scrolled>
     <v-row>
       <v-col sm="2">
-        <v-btn>{{$t('Extern Search People')}}</v-btn>
+        <v-btn>{{$t('Extern Search Person')}}</v-btn>
       </v-col>
     </v-row>
     <v-row class="mt-5">
@@ -23,7 +23,7 @@
       <v-col sm="8">
         <v-text-field
           :label="$t('Document ID 1')"
-          v-model="form_values.doc1_id"
+          v-model="form_values.doc_id1"
           return-masked-value
           v-mask="doc1_mask"
           :disabled="!doc_type"
@@ -36,7 +36,7 @@
       <v-col sm="6">
         <v-text-field
           :label="$t('Document ID 2')"
-          v-model="form_values.doc2_id"
+          v-model="form_values.doc_id2"
           return-masked-value
           v-mask="doc2_mask"
           :outlined="true"
@@ -130,8 +130,8 @@ export default {
         name1: '',
         name2: '',
         person_type: '',
-        doc1_id: '',
-        doc2_id: '',
+        doc_id1: '',
+        doc_id2: '',
         extern_code: '',
         since: '',
       },
@@ -151,7 +151,7 @@ export default {
   methods: {
     doc_type_changed(){
       if(this.doc_type == null){
-        this.form_values.doc1_id = '';
+        this.form_values.doc_id1 = '';
       }
     }
   },

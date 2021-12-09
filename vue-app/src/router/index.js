@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import DashBoard from '@/views/DashBoard.vue';
-import PeopleRegisters from '@/views/Registers/People.vue';
+import PersonRegisters from '@/views/Registers/Person.vue';
 import ProductsRegisters from '@/views/Registers/Products.vue';
 
 Vue.use(VueRouter)
@@ -23,9 +23,9 @@ const routes = [
     component: ProductsRegisters
   },
   {
-    path: '/registers/people',
-    name: 'People',
-    component: PeopleRegisters
+    path: '/registers/Person',
+    name: 'Person',
+    component: PersonRegisters
   },
 
 ]

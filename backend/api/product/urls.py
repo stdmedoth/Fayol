@@ -1,9 +1,9 @@
 from django.conf.urls import url
 from django.urls import path, include
 from .views import (
-    ProductsView,
+    ProductView,
 )
 
 urlpatterns = [
-    path('', ProductsView.as_view()),
+    path('', ProductView.as_view()),
 ]

@@ -17,5 +17,6 @@ from django.conf.urls import url
 from django.urls import path, include
 
 urlpatterns = [
-    path('products', include('api.products.urls')),
+    path('product', include('api.product.urls')),
+    path('person', include('api.person.urls')),
 ]

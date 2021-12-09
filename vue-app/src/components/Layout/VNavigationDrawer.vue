@@ -26,7 +26,7 @@
           >
             <v-list-item>
               <v-list-item-icon>
-                <v-icon>{{ item.icon }}</v-icon>
+                <v-icon :color="($route.name == 'Main') || ($route.name == 'DashBoard') ? 'blue' : ''">{{ item.icon }}</v-icon>
               </v-list-item-icon>
 
               <v-list-item-content>
@@ -80,7 +80,7 @@
           { title: 'Dashboard', icon: 'mdi-view-dashboard', location: '/dashboard' },
           { title: 'Registers', icon: 'mdi-plus-circle-outline', childrens: [
             { title: 'Products', icon: 'mdi-package-variant-closed', location: '/registers/products' },
-            { title: 'People', icon: 'mdi-account-group', location: '/registers/people' },
+            { title: 'Person', icon: 'mdi-account-group', location: '/registers/Person' },
           ] },
           { title: 'Financial', icon: 'mdi-wallet', childrens: [
             { title: 'Entradas', icon: 'mdi-cash-plus', location: '/financial/inflows' },

@@ -14,9 +14,9 @@
 
 ![Products](https://github.com/stdmedoth/Fayol/raw/main/vue-app/public/img/screenshots/products.png)
 
-### People
+### Person
 
-![People](https://github.com/stdmedoth/Fayol/raw/main/vue-app/public/img/screenshots/people.png)
+![Person](https://github.com/stdmedoth/Fayol/raw/main/vue-app/public/img/screenshots/Person.png)
 
 > Sales Module ( quotes, purchase order )
 

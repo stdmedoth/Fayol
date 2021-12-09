@@ -6,12 +6,16 @@
       elevation="24"
     >
       <v-card-text style="height: 400px; overflow: auto;">
-        <v-form>
+        <v-form
+          ref="products_registers_form"
+          v-model="form_valid"
+          lazy-validation
+        >
           <v-toolbar
             dark
             flat
           >
-            <v-card-title>{{$t('People')}}</v-card-title>
+            <v-card-title>{{$t('Person')}}</v-card-title>
             <template v-slot:extension>
               <v-tabs
                 v-model="tab"
@@ -65,11 +69,11 @@
 </template>
 
 <script>
-import Basic from  '@/views/Registers/People/Main';
-import Contacts from  '@/views/Registers/People/Contacts';
-import Address from  '@/views/Registers/People/Address';
-import Financial from  '@/views/Registers/People/Financial';
-import Others from  '@/views/Registers/People/Others';
+import Basic from  '@/views/Registers/Person/Main';
+import Contacts from  '@/views/Registers/Person/Contacts';
+import Address from  '@/views/Registers/Person/Address';
+import Financial from  '@/views/Registers/Person/Financial';
+import Others from  '@/views/Registers/Person/Others';
 
 export default {
   mounted(){
@@ -77,6 +81,7 @@ export default {
   },
   data(){
     return {
+      form_valid: false,
       tab: null,
       disable_action:{
         change: false,
