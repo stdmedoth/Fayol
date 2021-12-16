@@ -6,7 +6,7 @@
       clipped-left
       dark
     >
-      <v-app-bar-nav-icon @click="$root.$emit('navigation_drawer:change_mini')"></v-app-bar-nav-icon>
+      <v-app-bar-nav-icon v-if="$isMobile()" @click="$root.$emit('navigation_drawer:change_mini')"></v-app-bar-nav-icon>
 
       <v-toolbar-title>{{AppName}}</v-toolbar-title>
 

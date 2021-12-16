@@ -3,13 +3,12 @@
     app
     dark
     permanent
-    :mini-variant="mini"
     clipped
+    v-if="($isMobile() && !mini) || (!$isMobile())"
+    :mini-variant="mini"
     :expand-on-hover="hover"
   >
-
     <v-divider></v-divider>
-
     <v-list
       dense
       nav
@@ -49,7 +48,7 @@
               :to="children.location"
               custom
             >
-              <v-list-item >
+              <v-list-item>
                 <v-list-item-icon :class="!mini && !hover ? 'ml-10' : 'ml-00'">
                   <v-icon color="blue">{{ children.icon }}</v-icon>
                 </v-list-item-icon>
@@ -68,14 +67,21 @@
 <script>
   export default {
     mounted(){
+      this.$root.$on('navigation_drawer:change_lock', ()=>{
+        this.hover = !this.hover;
+      });
       this.$root.$on('navigation_drawer:change_mini', ()=>{
+        this.hover = !this.mini;
         this.mini = !this.mini;
-      })
+      });
+      if(this.$isMobile()){
+        this.$root.$emit('navigation_drawer:change_mini');
+      }
     },
     data () {
       return {
-        mini: true,
-        hover: false,
+        mini: false,
+        hover: true,
         items: [
           { title: 'Dashboard', icon: 'mdi-view-dashboard', location: '/dashboard' },
           { title: 'Registers', icon: 'mdi-plus-circle-outline', childrens: [

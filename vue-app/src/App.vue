@@ -2,16 +2,12 @@
   <v-app>
     <VBar />
     <VNavigationDrawer />
-    <v-main app>
-      <v-container fluid>
-        <router-view></router-view>
-      </v-container>
-    </v-main>
-
+    <VMain />
   </v-app>
 </template>
 
 <script>
+import VMain from '@/components/Layout/VMain';
 import VBar from '@/components/Layout/VBar'
 import VNavigationDrawer from '@/components/Layout/VNavigationDrawer'
   export default{
@@ -21,6 +17,7 @@ import VNavigationDrawer from '@/components/Layout/VNavigationDrawer'
       }
     },
     components: {
+      VMain,
       VBar,
       VNavigationDrawer
     }

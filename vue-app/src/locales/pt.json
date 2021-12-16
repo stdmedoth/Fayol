@@ -31,6 +31,11 @@
   "date_format": "##/##/####",
   "Person Name 1": "Nome",
   "Person Type": "Tipo de Pessoa",
+  "Register Type": "Tipo de Cadastro",
+  "Legal": "Jurídica",
+  "Physical": "Física",
+  "Legal Person Doc": "CNPJ",
+  "Physical Person Doc": "CPF",
   "Extern Code": "Código Externo",
   "Since": "Desde",
   "Person Name 2": "Nome Fantasia",
@@ -40,5 +45,20 @@
   "Minimum value for paid shipping": "Valor mínimo para frete pago",
   "Payment Condition": "Condição de Pagamento",
   "Paid Shipping": "Frete pago",
-  "Notifications": "Notificações"
+  "Notifications": "Notificações",
+  "Name field must be filled": "O Nome deve ser preenchido",
+  "Name 2 should be input": "O Nome Fantasia deve ser inserido",
+  "Person Type field must be filled": "O Tipo de Pessoa deve ser preenchido",
+  "Document 1 field must be filled": "O CPF/CNPJ deve ser preenchido",
+  "Document 2 field must be filled": "O RG/IE deve ser preenchido",
+  "Register Type must be filled": "O Tipo de Cadastro deve ser preenchido",
+  "Extern Code field must be filled": "O código externo deve ser preenchido",
+  "Since field must be filled": "O campo 'Desde' deve ser preenchido",
+  "Choose the Person Type" : "Escolha o Tipo de Pessoa"
+
+
+
+
+
+
 }

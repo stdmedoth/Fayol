@@ -11,6 +11,8 @@ import "@/plugins/vuetify-money.js";
 import { VueMaskDirective } from 'v-mask'
 Vue.directive('mask', VueMaskDirective);
 
+import VueMobileDetection from 'vue-mobile-detection'
+Vue.use(VueMobileDetection)
 
 Vue.config.productionTip = false;
 

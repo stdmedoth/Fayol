@@ -2,10 +2,10 @@
   <div class="products_registers">
     <v-card
       class="d-flex flex-column"
-      height="500"
+      :height="$isMobile() ? 650 : 500"
       elevation="24"
     >
-      <v-card-text style="height: 400px; overflow: auto;">
+      <v-card-text :style="'overflow: auto;'">
         <v-form>
           <v-toolbar
             dark
@@ -34,28 +34,29 @@
       <v-spacer></v-spacer>
       <v-card-actions>
         <v-btn
+          class="ml-10"
           outlined
-          :disabled="disable_action.conclude"
+          v-if="disable_action.conclude"
         >
           {{$t('Conclude')}}
         </v-btn>
         <v-btn
           outlined
-          :disabled="disable_action.change"
+          v-if="disable_action.change"
         >
           {{$t('Change')}}
         </v-btn>
         <v-btn
           outlined
           color="red"
-          :disabled="disable_action.cancel"
+          v-if="disable_action.cancel"
         >
         {{$t('Cancel')}}
         </v-btn>
         <v-btn
           outlined
           color="red"
-          :disabled="disable_action.exclude"
+          v-if="disable_action.exclude"
         >
           {{$t('Exclude')}}
         </v-btn>

@@ -3,6 +3,7 @@
     <v-row class="mt-5">
       <v-col
         sm="3"
+        cols="12"
       >
         <v-select
           :label="$t('Payment Condition')"
@@ -15,7 +16,10 @@
         >
         </v-select>
       </v-col>
-      <v-col sm="7">
+      <v-col
+        sm="7"
+        cols="12"
+      >
         <v-checkbox
           v-model="form_values.paid_shipping"
           :label="$t('Paid Shipping')"
