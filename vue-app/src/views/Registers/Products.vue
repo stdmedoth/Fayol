@@ -26,7 +26,7 @@
           </v-toolbar>
           <v-tabs-items v-model="tab">
             <v-tab-item v-for="(component, i) in tablist" :key="i">
-              <component :is="i" />
+              <component :is="i" :tabName="i" />
             </v-tab-item>
           </v-tabs-items>
         </v-form>
@@ -36,6 +36,7 @@
         <v-btn
           class="ml-10"
           outlined
+          @click="$root.$emit('products:submit')"
           v-if="disable_action.conclude"
         >
           {{$t('Conclude')}}
@@ -72,10 +73,48 @@ import Complement from '@/views/Registers/Products/Complement';
 
 export default {
   mounted(){
+    this.$root.$on('products:submit:tab_values_loaded', (tab_values)=>{
+      let tab_length = Object.keys(this.tablist).length;
 
+      let tab_submited = false;
+      this.submit.tabs.forEach((tab) => {
+        if(tab.name == tab_values.name){
+          tab_submited = true;
+        }
+      });
+
+      if(!tab_submited){
+        this.submit.tabs.push({
+          name: tab_values.name,
+          values: tab_values.values,
+          submited: true
+        });
+      }else{
+        this.submit.tabs.forEach((tab) => {
+          if(tab.name == tab_values.name){
+            tab.submited = true;
+          }else{
+            tab.submited = false;
+          }
+        });
+      }
+
+      let tab_submited_length = this.submit.tabs.filter(t => t.submited ? true : false).length;
+      if(tab_length == tab_submited_length ){
+        this.$root.$emit('products:submit:alltabs_values_loaded');
+      }
+    });
+
+    this.$root.$on('products:submit:alltabs_values_loaded', ()=>{
+      console.log("Todas abas carregadas");
+    })
   },
   data(){
-    return {
+    return{
+      submit: {
+        form_values: null,
+        tabs: []
+      },
       disable_action:{
         change: false,
         conclude: true,

@@ -17,8 +17,14 @@
 
 <script>
 export default {
+  props: {
+    tabName: String
+  },
   mounted(){
-
+    this.$root.$on('products:submit', ()=>{
+      let data = {name: this.tabName, values: this.form_fields};
+      this.$root.$emit('products:submit:tab_values_loaded', data);
+    })
   },
   data(){
     return {

@@ -56,6 +56,9 @@
 
 <script>
 export default {
+  props: {
+    tabName: String
+  },
   watch: {
     searchSupplier () {
       this.form_fields.supplier.isLoading = true
@@ -69,7 +72,7 @@ export default {
           { name: 'PEDRO ENRIQUE CALISTO', id: 2 },
           { name: 'MARCELENE BENJAMIN DE BRITO', id: 3 },
         ];
-        
+
       })
       .catch(err => {
         console.log(err)
@@ -78,7 +81,10 @@ export default {
     },
   },
   mounted(){
-
+    this.$root.$on('products:submit', ()=>{
+      let data = {name: this.tabName, values: this.form_fields};
+      this.$root.$emit('products:submit:tab_values_loaded', data);
+    })
   },
   data(){
     return {
@@ -91,7 +97,7 @@ export default {
         product_name: {
           value: '',
           rules: [
-            v => !!v || 'Name is required',
+            v => !!v || this.$t('Product Name is required'),
             v => (v && v.length <= 10) || 'Name must be less than 10 characters',
           ],
         },
